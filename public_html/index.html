@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- Indica que estamos usando HTML5 -->
+
+<html lang="es">
+<!-- Empieza el documento y dice que está en español -->
+
+<head>
+    <!-- Aquí van configuraciones de la página -->
+
+    <meta charset="UTF-8">
+    <!-- Permite usar acentos, ñ y otros caracteres -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hace que la página se adapte mejor al tamaño de la pantalla -->
+
+    <title>Sistema de Calificaciones</title>
+    <!-- Nombre que aparece en la pestaña del navegador -->
+
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Conecta este HTML con el archivo de estilos CSS -->
+</head>
+
+<body>
+    <!-- Aquí empieza todo lo que se va a ver en la página -->
+
+    <div class="contenedor">
+        <!-- Contenedor principal de todo el sistema -->
+
+        <h1>Sistema de Calificaciones</h1>
+        <!-- Título principal -->
+
+        <p>Captura las calificaciones del alumno</p>
+        <!-- Texto que explica qué debe hacer el usuario -->
+
+        <div class="formulario">
+            <!-- Contiene todos los datos que se van a pedir -->
+
+            <label for="nombre">Nombre del alumno:</label>
+            <!-- Texto que indica qué se debe escribir -->
+
+            <input type="text" id="nombre" placeholder="Escribe el nombre">
+            <!-- Campo donde se escribe el nombre -->
+
+            <label for="calificacion1">Calificación 1:</label>
+
+            <input type="number" id="calificacion1" min="0" max="10">
+            <!-- Campo numérico que solo debería aceptar del 0 al 10 -->
+
+            <label for="calificacion2">Calificación 2:</label>
+            <input type="number" id="calificacion2" min="0" max="10">
+
+            <label for="calificacion3">Calificación 3:</label>
+            <input type="number" id="calificacion3" min="0" max="10">
+
+            <label for="calificacion4">Calificación 4:</label>
+            <input type="number" id="calificacion4" min="0" max="10">
+
+            <label for="edad">Edad</label>
+
+            <input type="number" id="edad" min="0" max="120">
+            <!-- Campo para escribir la edad -->
+
+            <button onclick="calcularPromedio()">
+                <!-- Al dar clic manda llamar la función calcularPromedio -->
+                Calcular promedio
+            </button>
+
+            <button onclick="AgregarAlumnos()">
+                <!-- Guarda al alumno dentro del arreglo -->
+                Agregar Alumno
+            </button>
+
+            <button onclick="MostrarAlumnos()">
+                <!-- Muestra todos los alumnos que están guardados -->
+                Mostrar Alumnos
+            </button>
+
+            <button onclick="LimpiarAlumnos()">
+                <!-- Borra todos los alumnos guardados -->
+                Limpiar Alumnos
+            </button>
+
+        </div>
+
+        <div id="resultado" class="resultado">
+            <!-- Aquí se van a imprimir los resultados -->
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Conecta el HTML con nuestro archivo de JavaScript -->
+
+</body>
+
+</html>
