@@ -11,11 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      id-token: write
       contents: read
 
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F4996AF5428A460C96824B589571B914 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C9356CF670554AF6BFCB86283BC11049 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_B15A195304EE4098A8A7454193B0DAA7 }}
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
@@ -23,4 +31,3 @@ jobs:
           app-name: 'ConexionbatizformularioMiguel'
           slot-name: 'Production'
           package: './public_html'
-          
